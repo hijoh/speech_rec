@@ -12,10 +12,10 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"
-//#include "lv_examples/src/lv_demo_widgets/lv_demo_widgets.h"
-//#include "lv_examples/src/lv_demo_music/lv_demo_music.h"
-//#include "lv_examples/src/lv_demo_benchmark/lv_demo_benchmark.h"
-//#include "lvgl_helpers.h"
+#include "lv_examples/src/lv_demo_widgets/lv_demo_widgets.h"
+#include "lv_examples/src/lv_demo_music/lv_demo_music.h"
+#include "lv_examples/src/lv_demo_benchmark/lv_demo_benchmark.h"
+#include "lvgl_helpers.h"
 #include "esp_freertos_hooks.h"
 #include "esp_vfs.h"
 #include "esp_spiffs.h"
@@ -32,11 +32,11 @@
 
 #define TAG "ESP32S3"
 /*用定时器给LVGL提供时钟*/
-// static void lv_tick_task(void *arg)
-// {
-// 	(void)arg;
-// 	lv_tick_inc(10);
-// }
+static void lv_tick_task(void *arg)
+{
+	(void)arg;
+	lv_tick_inc(10);
+}
 
 // SemaphoreHandle_t xGuiSemaphore;
 
