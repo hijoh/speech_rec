@@ -1,0 +1,57 @@
+本例程是 语音识别
+
+
+唤醒词是Hi Lexin
+稍微连着说  说清晰一点
+命令词可以在menuconfig里面修改  也可以直接在sdkconfig里面修改
+找到以下位置
+#
+# Add speech commands
+#
+CONFIG_CN_SPEECH_COMMAND_ID0="tiao dao er shi du"//调到二十度
+CONFIG_CN_SPEECH_COMMAND_ID1="tiao dao er shi yi du"
+CONFIG_CN_SPEECH_COMMAND_ID2="tiao dao er shi er du"
+CONFIG_CN_SPEECH_COMMAND_ID3="tiao dao er shi san du"
+CONFIG_CN_SPEECH_COMMAND_ID4="tiao dao er shi si du"
+CONFIG_CN_SPEECH_COMMAND_ID5="tiao dao er shi wu du"
+CONFIG_CN_SPEECH_COMMAND_ID6="tiao dao er shi liu du"
+CONFIG_CN_SPEECH_COMMAND_ID7="tiao dao er shi qi du"
+CONFIG_CN_SPEECH_COMMAND_ID8="tiao dao er shi ba du"
+CONFIG_CN_SPEECH_COMMAND_ID9="qi dong kong tiao sao feng"
+CONFIG_CN_SPEECH_COMMAND_ID10="ting zhi kong tiao sao feng"
+CONFIG_CN_SPEECH_COMMAND_ID11="tiao dao zi dong feng su"
+CONFIG_CN_SPEECH_COMMAND_ID12="tiao dao yi ji feng su"
+CONFIG_CN_SPEECH_COMMAND_ID13="tiao dao er ji feng su"
+CONFIG_CN_SPEECH_COMMAND_ID14="tiao dao san ji feng su"
+CONFIG_CN_SPEECH_COMMAND_ID15="da kai kong tiao"//打开空调
+CONFIG_CN_SPEECH_COMMAND_ID16="guan bi kong tiao"//关闭空调
+CONFIG_CN_SPEECH_COMMAND_ID17="ge li kong tiao"//格力空调
+CONFIG_CN_SPEECH_COMMAND_ID18="mei di kong tiao"
+CONFIG_CN_SPEECH_COMMAND_ID19="ao ke si kong tiao"
+CONFIG_CN_SPEECH_COMMAND_ID20="hai er kong tiao" //海尔空调
+CONFIG_CN_SPEECH_COMMAND_ID21="kai deng" //开灯
+CONFIG_CN_SPEECH_COMMAND_ID22="guan deng"    //关灯
+
+对应的识别处理
+/*
+ * 语音识别处理函数
+ */
+static esp_err_t asr_multinet_control(int commit_id)
+{
+
+	if (commit_id >= 0 && commit_id < ID_MAX)
+	{
+		switch (commit_id)
+		{
+		case ID0_TIAODAOERSHIDU:
+			play_spiffs_name("haode.wav");
+	
+			ESP_LOGI(TAG, "ID0_TIAODAOERSHIDU");
+			lv_label_set_text(label_speech, "已调到20度");
+			break;
+		case ID1_TIAODAOERSHIYIDU:
+			play_spiffs_name("haode.wav");
+
+			ESP_LOGI(TAG, "ID1_TIAODAOERSHIYIDU");
+			lv_label_set_text(label_speech, "已调到21度");
+			break;
