@@ -25,13 +25,13 @@
 #include "esp_wn_models.h"
 #include "dl_lib_coefgetter_if.h"
 #include "app_main.h"
-#include "app_led.h"
+//#include "app_led.h"
 #include "esp_mn_iface.h"
 #include "esp_mn_models.h"
 #include "lvgl/lvgl.h"
 #include "lvgl_helpers.h"
 
-#include "page_wakeup.h"
+//#include "page_wakeup.h"
 #include "wav_player.h"
 
 #define TAG "SPEECH"
@@ -62,67 +62,67 @@ static esp_err_t asr_multinet_control(int commit_id)
 			play_spiffs_name("haode.wav");
 	
 			ESP_LOGI(TAG, "ID0_TIAODAOERSHIDU");
-			lv_label_set_text(label_speech, "已调到20度");
+			//lv_label_set_text(label_speech, "已调到20度");
 			break;
 		case ID1_TIAODAOERSHIYIDU:
 			play_spiffs_name("haode.wav");
 
 			ESP_LOGI(TAG, "ID1_TIAODAOERSHIYIDU");
-			lv_label_set_text(label_speech, "已调到21度");
+			//lv_label_set_text(label_speech, "已调到21度");
 			break;
 		case ID2_TIAODAOERSHIERDU:
 			play_spiffs_name("haode.wav");
 		
 			ESP_LOGI(TAG, "ID2_TIAODAOERSHIERDU");
-			lv_label_set_text(label_speech, "已调到22度");
+			//lv_label_set_text(label_speech, "已调到22度");
 			break;
 		case ID3_TIAODAOERSHISANDU:
 			play_spiffs_name("haode.wav");
 
 			ESP_LOGI(TAG, "ID3_TIAODAOERSHISANDU");
-			lv_label_set_text(label_speech, "已调到23度");
+			//lv_label_set_text(label_speech, "已调到23度");
 			break;
 		case ID4_TIAODAOERSHISIDU:
 			play_spiffs_name("haode.wav");
 		
 			ESP_LOGI(TAG, "ID4_TIAODAOERSHISIDU");
-			lv_label_set_text(label_speech, "已调到24度");
+			//lv_label_set_text(label_speech, "已调到24度");
 			break;
 		case ID5_TIAODAOERSHIWUDU:
 			play_spiffs_name("haode.wav");
 			
 			ESP_LOGI(TAG, "ID5_TIAODAOERSHIWUDU");
-			lv_label_set_text(label_speech, "已调到25度");
+			//lv_label_set_text(label_speech, "已调到25度");
 			break;
 		case ID6_TIAODAOERSHLIUIDU:
 			play_spiffs_name("haode.wav");
 		
 			ESP_LOGI(TAG, "ID6_TIAODAOERSHLIUIDU");
-			lv_label_set_text(label_speech, "已调到26度");
+			//lv_label_set_text(label_speech, "已调到26度");
 			break;
 		case ID7_TIAODAOERSHIQIDU:
 			play_spiffs_name("haode.wav");
 			
 			ESP_LOGI(TAG, "ID7_TIAODAOERSHIQIDU");
-			lv_label_set_text(label_speech, "已调到27度");
+			//lv_label_set_text(label_speech, "已调到27度");
 			break;
 		case ID8_TIAODAOERSHIBADU:
 			play_spiffs_name("haode.wav");
 			
 			ESP_LOGI(TAG, "ID8_TIAODAOERSHIBADU");
-			lv_label_set_text(label_speech, "已调到28度");
+			//lv_label_set_text(label_speech, "已调到28度");
 			break;
 		case ID9_QIDONGKONGTIAOSAOFENG:
 			play_spiffs_name("haode.wav");
 		
 			ESP_LOGI(TAG, "ID9_QIDONGKONGTIAOSAOFENG");
-			lv_label_set_text(label_speech, "已打开扫风");
+			//lv_label_set_text(label_speech, "已打开扫风");
 			break;
 		case ID10_TINGZHIKONGTIAOSAOFENG:
 			play_spiffs_name("haode.wav");
 		
 			ESP_LOGI(TAG, "ID10_TINGZHIKONGTIAOSAOFENG");
-			lv_label_set_text(label_speech, "已关闭扫风");
+			//lv_label_set_text(label_speech, "已关闭扫风");
 			break;
 		case ID11_TIAODAOZIDONGFENGSU:
 			play_spiffs_name("haode.wav");
@@ -148,52 +148,52 @@ static esp_err_t asr_multinet_control(int commit_id)
 			play_spiffs_name("airon.wav");
 
 			ESP_LOGI(TAG, "ID15_DAKAIKONGTIAO");
-			lv_label_set_text(label_speech, "已打开空调");
+			//lv_label_set_text(label_speech, "已打开空调");
 
 			break;
 		case ID16_GUANBIKONGTIAO:
 			play_spiffs_name("airoff.wav");
 
 			ESP_LOGI(TAG, "ID16_GUANBIKONGTIAO");
-			lv_label_set_text(label_speech, "已关闭空调");
+			//lv_label_set_text(label_speech, "已关闭空调");
 
 			break;
 		case ID17_GELIKONGTIAO:
 			play_spiffs_name("haode.wav");
 
 			ESP_LOGI(TAG, "ID17_GELIKONGTIAO");
-			lv_label_set_text(label_speech, "已设置为格力空调");
+			//lv_label_set_text(label_speech, "已设置为格力空调");
 			break;
 		case ID18_MEIDIKONGTIAO:
 			play_spiffs_name("haode.wav");
 
 			ESP_LOGI(TAG, "ID18_MEIDIKONGTIAO");
-			lv_label_set_text(label_speech, "已设置为美的空调");
+			//lv_label_set_text(label_speech, "已设置为美的空调");
 			break;
 		case ID19_AOKESIKONGTIAO:
 			play_spiffs_name("haode.wav");
 
 			ESP_LOGI(TAG, "ID19_AOKESIKONGTIAO");
-			lv_label_set_text(label_speech, "已设置为奥克斯空调");
+			//lv_label_set_text(label_speech, "已设置为奥克斯空调");
 			break;
 		case ID20_HAIERKONGTIAO:
 			play_spiffs_name("haode.wav");
 
 			ESP_LOGI(TAG, "ID20_HAIERKONGTIAO");
-			lv_label_set_text(label_speech, "已设置为海尔空调");
+			//lv_label_set_text(label_speech, "已设置为海尔空调");
 			break;
-		case ID21_KAIDENG:
-			play_spiffs_name("haode.wav");
-			app_led_set_all(30, 30, 30);
-			ESP_LOGI(TAG, "ID21_KAIDENG");
-			lv_label_set_text(label_speech, "已开灯");
-			break;
-		case ID22_GUANDENG:
-			play_spiffs_name("haode.wav");
-			app_led_set_all(0, 0, 0);
-			ESP_LOGI(TAG, "ID22_GUANDENG");
-			lv_label_set_text(label_speech, "已关灯");
-			break;
+		// case ID21_KAIDENG:
+		// 	play_spiffs_name("haode.wav");
+		// 	app_led_set_all(30, 30, 30);
+		// 	ESP_LOGI(TAG, "ID21_KAIDENG");
+		// 	lv_label_set_text(label_speech, "已开灯");
+		// 	break;
+		// case ID22_GUANDENG:
+		// 	play_spiffs_name("haode.wav");
+		// 	app_led_set_all(0, 0, 0);
+		// 	ESP_LOGI(TAG, "ID22_GUANDENG");
+		// 	lv_label_set_text(label_speech, "已关灯");
+		// 	break;
 		default:
 			ESP_LOGI(TAG, "not supportint mode");
 			break;
@@ -248,10 +248,10 @@ void nnTask(void *arg)
 				
 				float ms = (chunks * audio_chunksize * 1000.0) / frequency;
 				printf("%.2f: %s DETECTED.\n", (float)ms / 1000.0, wakenet->get_word_name(model_data, r));
-				page_wakeup_start();//弹出提示框
+				//page_wakeup_start();//弹出提示框
 				play_spiffs_name("wozai.wav");//播放wav
 				detect_flag = 1;//进入语音命令识别状态
-				lv_label_set_text(label_speech, "我在听呢！\n请说命令词叭");
+				//lv_label_set_text(label_speech, "我在听呢！\n请说命令词叭");
 				printf("-----------------LISTENING-----------------\n\n");
 				vTaskDelay(10);
 				
@@ -275,7 +275,7 @@ void nnTask(void *arg)
 				detect_flag = 0;
 				printf("\n-----------awaits to be waken up-----------\n");
 				vTaskDelay(500);
-				page_wakeup_end();
+				//page_wakeup_end();
 				vTaskDelay(2);
 			}
 
@@ -286,10 +286,10 @@ void nnTask(void *arg)
 				// xTaskCreatePinnedToCore(&asr_nothinf_control, "asr_nothinf_control", 5 * 1024, NULL, 14, NULL, 0);
 				playing = true;
 				vTaskDelay(100);
-				lv_label_set_text(label_speech, "刚刚没听清耶...");
+				//lv_label_set_text(label_speech, "刚刚没听清耶...");
 				play_spiffs_name("what.wav");
 				printf("\n-----------awaits to be waken up-----------\n");
-				page_wakeup_end();
+				//page_wakeup_end();
 				vTaskDelay(2);
 				mn_chunks = 0;
 				detect_flag = 0;
